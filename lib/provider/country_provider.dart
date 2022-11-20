@@ -1,34 +1,34 @@
+import 'dart:convert';
+import 'dart:developer';
+
+import 'package:currency_app/logger.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/services.dart';
 import '../models/country_model.dart';
 
-final List<CountryDataModel> initialData = List.generate(
-  50, 
-  (index) => CountryDataModel(
-    // imageUrl: "${initialData[index].imageUrl}",
-    // currencyCode: "${initialData[index].currencyCode}" ,
-    // countryName: "${initialData[index].countryName}"
-    imageUrl: "Country Image URL $index",
-    countryName: "Country Name URL $index",
-    currencyCode: "Country Code $index",
+class CountryProvider with ChangeNotifier {
+  final List<CountryDataModel> _countries = [];
+  List<CountryDataModel> get countries => _countries;
 
-    )
-);
-
-class CountryProvider with ChangeNotifier{
-  
-  final List<CountryDataModel> _countries = initialData;
-  List<CountryDataModel> get countries => _countries; 
-  
-  final List<CountryDataModel> _addedCourrencyList = [];
-  List<CountryDataModel> get addedCourrencyList => _addedCourrencyList; 
-
-  void addToList(CountryDataModel movie){
-    _addedCourrencyList.add(movie); 
+  Future<void> setCountries() async {
+    final String response = await rootBundle.loadString('assets/final.json');
+    final data = await json.decode(response);
+    for (final country in data) {
+      _countries.add(CountryDataModel.fromJson(country));
+    }
     notifyListeners();
   }
 
-  void removeFromList(CountryDataModel movie){
-    _addedCourrencyList.remove(movie); 
+  final List<CountryDataModel> _addedCourrencyList = [];
+  List<CountryDataModel> get addedCourrencyList => _addedCourrencyList;
+
+  void addToList(CountryDataModel movie) {
+    _addedCourrencyList.add(movie);
+    notifyListeners();
+  }
+
+  void removeFromList(CountryDataModel movie) {
+    _addedCourrencyList.remove(movie);
     notifyListeners();
   }
 }
