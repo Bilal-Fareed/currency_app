@@ -1,4 +1,4 @@
-import 'package:currency_app/presentation/screens/country_list_screen.dart';
+import 'package:currency_app/presentation/screens/currency_list_screen.dart';
 import 'package:flutter/material.dart';
 
 class AddCurrencyButton extends StatelessWidget {
@@ -11,7 +11,9 @@ class AddCurrencyButton extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         Navigator.of(context).push(
-          MaterialPageRoute(builder: (context) => const Countries_List()),
+          MaterialPageRoute(
+            builder: (context) => const CurrencyList(),
+          ),
         );
       },
       child: Padding(

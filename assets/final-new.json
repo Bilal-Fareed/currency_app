@@ -1,24 +1,31 @@
 [
   {
+    "Country": "United States",
+    "CountryCode": "US",
+    "Currency": "US Dollar",
+    "Code": "USD",
+    "countryFlag": "🇺🇸"
+  },
+  {
+    "Country": "American Samoa",
+    "CountryCode": "AS",
+    "Currency": "Euro",
+    "Code": "EUR",
+    "countryFlag": "🇦🇸"
+  },
+  {
     "Country": "New Zealand",
     "CountryCode": "NZ",
-    "Currency": "New Zealand Dollars",
+    "Currency": "New Zealand Dollar",
     "Code": "NZD",
     "countryFlag": "🇳🇿"
   },
   {
     "Country": "Australian",
     "CountryCode": "AU",
-    "Currency": "Australian Dollars",
+    "Currency": "Australian Dollar",
     "Code": "AUD",
     "countryFlag": "🇦🇺"
-  },
-  {
-    "Country": "American Samoa",
-    "CountryCode": "AS",
-    "Currency": "Euros",
-    "Code": "EUR",
-    "countryFlag": "🇦🇸"
   },
 
   {
@@ -27,13 +34,6 @@
     "Currency": "Sterling",
     "Code": "GBP",
     "countryFlag": "🇬🇧"
-  },
-  {
-    "Country": "United States",
-    "CountryCode": "US",
-    "Currency": "US Dollar",
-    "Code": "USD",
-    "countryFlag": "🇺🇸"
   },
 
   {
@@ -60,14 +60,14 @@
   {
     "Country": "Afghanistan",
     "CountryCode": "AF",
-    "Currency": "Afghani",
+    "Currency": "Afghan Afghani",
     "Code": "AFN",
     "countryFlag": "🇦🇫"
   },
   {
     "Country": "Albania",
     "CountryCode": "AL",
-    "Currency": "Lek",
+    "Currency": "Albanian Lek",
     "Code": "ALL",
     "countryFlag": "🇦🇱"
   },
@@ -99,12 +99,12 @@
     "Code": "AMD",
     "countryFlag": "🇦🇲"
   },
-
   {
     "Country": "Netherlands Antilles",
     "CountryCode": "AN",
-    "Currency": "Netherlands Antilles Guilder",
-    "Code": "ANG"
+    "Currency": "Dutch Guilder",
+    "Code": "ANG",
+    "countryFlag": "🇲🇫"
   },
   {
     "Country": "Azerbaijan",
@@ -130,7 +130,7 @@
   {
     "Country": "Bangladesh",
     "CountryCode": "BD",
-    "Currency": "Taka",
+    "Currency": "Bangladeshi Taka",
     "Code": "BDT",
     "countryFlag": "🇧🇩"
   },
@@ -155,7 +155,6 @@
     "Code": "BZD",
     "countryFlag": "🇧🇿"
   },
-
   {
     "Country": "Ivory Coast",
     "CountryCode": "CI",
@@ -163,7 +162,6 @@
     "Code": "XOF",
     "countryFlag": "🇨🇮"
   },
-
   {
     "Country": "Bermuda",
     "CountryCode": "BM",
@@ -171,7 +169,6 @@
     "Code": "BMD",
     "countryFlag": "🇧🇲"
   },
-
   {
     "Country": "India",
     "CountryCode": "IN",
@@ -182,18 +179,17 @@
   {
     "Country": "Bolivia",
     "CountryCode": "BO",
-    "Currency": "Boliviano",
+    "Currency": "Bolivian Boliviano",
     "Code": "BOB",
     "countryFlag": "🇧🇴"
   },
   {
     "Country": "Botswana",
     "CountryCode": "BW",
-    "Currency": "Pula",
+    "Currency": "Botswana Pula",
     "Code": "BWP",
     "countryFlag": "🇧🇼"
   },
-
   {
     "Country": "Norway",
     "CountryCode": "NO",
@@ -201,11 +197,10 @@
     "Code": "NOK",
     "countryFlag": "🇳🇴"
   },
-
   {
     "Country": "Brazil",
     "CountryCode": "BR",
-    "Currency": "Brazil",
+    "Currency": "Brazilian Real",
     "Code": "BRL",
     "countryFlag": "🇧🇷"
   },
@@ -219,7 +214,7 @@
   {
     "Country": "Bulgaria",
     "CountryCode": "BG",
-    "Currency": "Lev",
+    "Currency": "Bulgarian Lev",
     "Code": "BGN",
     "countryFlag": "🇧🇬"
   },
@@ -233,11 +228,10 @@
   {
     "Country": "Cambodia",
     "CountryCode": "KH",
-    "Currency": "Riel",
+    "Currency": "Cambodian Riel",
     "Code": "KHR",
     "countryFlag": "🇰🇭"
   },
-
   {
     "Country": "Central African Republic",
     "CountryCode": "CF",
@@ -245,11 +239,10 @@
     "Code": "XAF",
     "countryFlag": "🇨🇫"
   },
-
   {
     "Country": "Cape Verde",
     "CountryCode": "CV",
-    "Currency": "Escudo",
+    "Currency": "Cape Verde Escudo",
     "Code": "CVE",
     "countryFlag": "🇨🇻"
   },
@@ -270,14 +263,14 @@
   {
     "Country": "China",
     "CountryCode": "CN",
-    "Currency": "Yuan Renminbi",
+    "Currency": "Chinese Yuan Renminbi",
     "Code": "CNY",
     "countryFlag": "🇨🇳"
   },
   {
     "Country": "Colombia",
     "CountryCode": "CO",
-    "Currency": "Peso",
+    "Currency": "Colombian Peso",
     "Code": "COP",
     "countryFlag": "🇨🇴"
   },
@@ -326,7 +319,7 @@
   {
     "Country": "Czech Republic",
     "CountryCode": "CZ",
-    "Currency": "Koruna",
+    "Currency": "Czech Koruna",
     "Code": "CZK",
     "countryFlag": "🇨🇿"
   },
@@ -337,20 +330,7 @@
     "Code": "DKK",
     "countryFlag": "🇩🇰"
   },
-  {
-    "Country": "Faroe Islands",
-    "CountryCode": "FO",
-    "Currency": "Danish Krone",
-    "Code": "DKK",
-    "countryFlag": "🇫🇴"
-  },
-  {
-    "Country": "Greenland",
-    "CountryCode": "GL",
-    "Currency": "Danish Krone",
-    "Code": "DKK",
-    "countryFlag": "🇬🇱"
-  },
+
   {
     "Country": "Djibouti",
     "CountryCode": "DJ",
@@ -368,12 +348,6 @@
   {
     "Country": "East Timor",
     "CountryCode": "TP",
-    "Currency": "Indonesian Rupiah",
-    "Code": "IDR"
-  },
-  {
-    "Country": "Indonesia",
-    "CountryCode": "ID",
     "Currency": "Indonesian Rupiah",
     "Code": "IDR",
     "countryFlag": "🇮🇩"
@@ -407,13 +381,6 @@
     "countryFlag": "🇪🇷"
   },
   {
-    "Country": "Ethiopia",
-    "CountryCode": "ET",
-    "Currency": "Ethiopian Birr",
-    "Code": "ETB",
-    "countryFlag": "🇪🇹"
-  },
-  {
     "Country": "Estonia",
     "CountryCode": "EE",
     "Currency": "Estonian Kroon",
@@ -442,13 +409,6 @@
     "countryFlag": "🇵🇫"
   },
   {
-    "Country": "New Caledonia",
-    "CountryCode": "NC",
-    "Currency": "CFP Franc",
-    "Code": "XPF",
-    "countryFlag": "🇳🇨"
-  },
-  {
     "Country": "Wallis and Futuna Islands",
     "CountryCode": "WF",
     "Currency": "CFP Franc",
@@ -458,14 +418,14 @@
   {
     "Country": "Gambia",
     "CountryCode": "GM",
-    "Currency": "Dalasi",
+    "Currency": "Gambian Dalasi",
     "Code": "GMD",
     "countryFlag": "🇬🇲"
   },
   {
     "Country": "Georgia",
     "CountryCode": "GE",
-    "Currency": "Lari",
+    "Currency": "Georgian Lari",
     "Code": "GEL",
     "countryFlag": "🇬🇪"
   },
@@ -479,7 +439,7 @@
   {
     "Country": "Guatemala",
     "CountryCode": "GT",
-    "Currency": "Quetzal",
+    "Currency": "Guatemalan Quetzal",
     "Code": "GTQ",
     "countryFlag": "🇬🇹"
   },
@@ -500,21 +460,21 @@
   {
     "Country": "Haiti",
     "CountryCode": "HT",
-    "Currency": "Gourde",
+    "Currency": "Haitian Gourde",
     "Code": "HTG",
     "countryFlag": "🇭🇹"
   },
   {
     "Country": "Honduras",
     "CountryCode": "HN",
-    "Currency": "Lempira",
+    "Currency": "Honduran Lempira",
     "Code": "HNL",
     "countryFlag": "🇭🇳"
   },
   {
     "Country": "Hungary",
     "CountryCode": "HU",
-    "Currency": "Forint",
+    "Currency": "Hungarian Forint",
     "Code": "HUF",
     "countryFlag": "🇭🇺"
   },
@@ -542,7 +502,7 @@
   {
     "Country": "Israel",
     "CountryCode": "IL",
-    "Currency": "Shekel",
+    "Currency": "Israeli Shekel",
     "Code": "ILS",
     "countryFlag": "🇮🇱"
   },
@@ -563,7 +523,7 @@
   {
     "Country": "Kazakhstan",
     "CountryCode": "KZ",
-    "Currency": "Tenge",
+    "Currency": "Kazakhstani Tenge",
     "Code": "KZT",
     "countryFlag": "🇰🇿"
   },
@@ -577,14 +537,14 @@
   {
     "Country": "Korea North",
     "CountryCode": "KP",
-    "Currency": "Won",
+    "Currency": "North Korean Won",
     "Code": "KPW",
     "countryFlag": "🇰🇵"
   },
   {
     "Country": "Korea South",
     "CountryCode": "KR",
-    "Currency": "Won",
+    "Currency": "South Korean Won",
     "Code": "KRW",
     "countryFlag": "🇰🇷"
   },
@@ -598,23 +558,16 @@
   {
     "Country": "Kyrgyzstan",
     "CountryCode": "KG",
-    "Currency": "Som",
+    "Currency": "Kyrgyzstani Som",
     "Code": "KGS",
     "countryFlag": "🇰🇬"
   },
   {
     "Country": "Lao PeopleÕs Democratic Republic",
     "CountryCode": "LA",
-    "Currency": "Kip",
+    "Currency": "Lao Kip",
     "Code": "LAK",
     "countryFlag": "🇱🇦"
-  },
-  {
-    "Country": "Latvia",
-    "CountryCode": "LV",
-    "Currency": "Lat",
-    "Code": "LVL",
-    "countryFlag": "🇱🇻"
   },
   {
     "Country": "Lebanon",
@@ -626,7 +579,7 @@
   {
     "Country": "Lesotho",
     "CountryCode": "LS",
-    "Currency": "Loti",
+    "Currency": "Basotho Loti",
     "Code": "LSL",
     "countryFlag": "🇱🇸"
   },
@@ -652,30 +605,16 @@
     "countryFlag": "🇱🇮"
   },
   {
-    "Country": "Switzerland",
-    "CountryCode": "CH",
-    "Currency": "Swiss Franc",
-    "Code": "CHF",
-    "countryFlag": "🇨🇭"
-  },
-  {
-    "Country": "Lithuania",
-    "CountryCode": "LT",
-    "Currency": "Lita",
-    "Code": "LTL",
-    "countryFlag": "🇱🇹"
-  },
-  {
     "Country": "Macau",
     "CountryCode": "MO",
-    "Currency": "Pataca",
+    "Currency": "Macau Pataca",
     "Code": "MOP",
     "countryFlag": "🇲🇴"
   },
   {
     "Country": "Macedonia",
     "CountryCode": "MK",
-    "Currency": "Denar",
+    "Currency": "Macedonian Denar",
     "Code": "MKD",
     "countryFlag": "🇲🇰"
   },
@@ -696,14 +635,14 @@
   {
     "Country": "Malaysia",
     "CountryCode": "MY",
-    "Currency": "Ringgit",
+    "Currency": "Malaysian Ringgit",
     "Code": "MYR",
     "countryFlag": "🇲🇾"
   },
   {
     "Country": "Maldives",
     "CountryCode": "MV",
-    "Currency": "Rufiyaa",
+    "Currency": "Maldivian Rufiyaa",
     "Code": "MVR",
     "countryFlag": "🇲🇻"
   },
@@ -717,7 +656,7 @@
   {
     "Country": "Mauritania",
     "CountryCode": "MR",
-    "Currency": "Ouguiya",
+    "Currency": "Mauritanian Ouguiya",
     "Code": "MRO",
     "countryFlag": "🇲🇷"
   },
@@ -731,56 +670,49 @@
   {
     "Country": "Mexico",
     "CountryCode": "MX",
-    "Currency": "Peso",
+    "Currency": "Mexican Peso",
     "Code": "MXN",
     "countryFlag": "🇲🇽"
   },
   {
     "Country": "Moldova Republic of",
     "CountryCode": "MD",
-    "Currency": "Leu",
+    "Currency": "Moldovan Leu",
     "Code": "MDL",
     "countryFlag": "🇲🇩"
   },
   {
     "Country": "Mongolia",
     "CountryCode": "MN",
-    "Currency": "Tugrik",
+    "Currency": "Mongolian Tugrik",
     "Code": "MNT",
     "countryFlag": "🇲🇳"
   },
   {
     "Country": "Morocco",
     "CountryCode": "MA",
-    "Currency": "Dirham",
+    "Currency": "Moroccon Dirham",
     "Code": "MAD",
     "countryFlag": "🇲🇦"
   },
   {
-    "Country": "Western Sahara",
-    "CountryCode": "EH",
-    "Currency": "Dirham",
-    "Code": "MAD",
-    "countryFlag": "🇪🇭"
-  },
-  {
     "Country": "Mozambique",
     "CountryCode": "MZ",
-    "Currency": "Metical",
+    "Currency": "Mozambican Metical",
     "Code": "MZN",
     "countryFlag": "🇲🇿"
   },
   {
-    "Country": "Myanmar",
+    "Country": "Burma",
     "CountryCode": "MM",
-    "Currency": "Kyat",
+    "Currency": "Burmese Kyat",
     "Code": "MMK",
     "countryFlag": "🇲🇲"
   },
   {
     "Country": "Namibia",
     "CountryCode": "NA",
-    "Currency": "Dollar",
+    "Currency": "Namibian Dollar",
     "Code": "NAD",
     "countryFlag": "🇳🇦"
   },
@@ -794,98 +726,98 @@
   {
     "Country": "Nicaragua",
     "CountryCode": "NI",
-    "Currency": "Cordoba Oro",
+    "Currency": "Nicaraguan Cordoba",
     "Code": "NIO",
     "countryFlag": "🇳🇮"
   },
   {
     "Country": "Nigeria",
     "CountryCode": "NG",
-    "Currency": "Naira",
+    "Currency": "Nigerian Naira",
     "Code": "NGN",
     "countryFlag": "🇳🇬"
   },
   {
     "Country": "Oman",
     "CountryCode": "OM",
-    "Currency": "Sul Rial",
+    "Currency": "Omani Rial",
     "Code": "OMR",
     "countryFlag": "🇴🇲"
   },
   {
     "Country": "Pakistan",
     "CountryCode": "PK",
-    "Currency": "Rupee",
+    "Currency": "Pakistani Rupee",
     "Code": "PKR",
     "countryFlag": "🇵🇰"
   },
   {
     "Country": "Panama",
     "CountryCode": "PA",
-    "Currency": "Balboa",
+    "Currency": "Panamanian Balboa",
     "Code": "PAB",
     "countryFlag": "🇵🇦"
   },
   {
     "Country": "Papua New Guinea",
     "CountryCode": "PG",
-    "Currency": "Kina",
+    "Currency": "Papua New Guinea Kina",
     "Code": "PGK",
     "countryFlag": "🇵🇬"
   },
   {
     "Country": "Paraguay",
     "CountryCode": "PY",
-    "Currency": "Guarani",
+    "Currency": "Paraguayan Guarani",
     "Code": "PYG",
     "countryFlag": "🇵🇾"
   },
   {
     "Country": "Peru",
     "CountryCode": "PE",
-    "Currency": "Nuevo Sol",
+    "Currency": "Peruvian Sol",
     "Code": "PEN",
     "countryFlag": "🇵🇪"
   },
   {
     "Country": "Philippines",
     "CountryCode": "PH",
-    "Currency": "Peso",
+    "Currency": "Philippine Peso",
     "Code": "PHP",
     "countryFlag": "🇵🇭"
   },
   {
     "Country": "Poland",
     "CountryCode": "PL",
-    "Currency": "Zloty",
+    "Currency": "Polish Zloty",
     "Code": "PLN",
     "countryFlag": "🇵🇱"
   },
   {
     "Country": "Qatar",
     "CountryCode": "QA",
-    "Currency": "Rial",
+    "Currency": "Qatari Rial",
     "Code": "QAR",
     "countryFlag": "🇶🇦"
   },
   {
     "Country": "Romania",
     "CountryCode": "RO",
-    "Currency": "Leu",
+    "Currency": "Romanian Leu",
     "Code": "RON",
     "countryFlag": "🇷🇴"
   },
   {
     "Country": "Russian Federation",
     "CountryCode": "RU",
-    "Currency": "Ruble",
+    "Currency": "Russian Ruble",
     "Code": "RUB",
     "countryFlag": "🇷🇺"
   },
   {
     "Country": "Rwanda",
     "CountryCode": "RW",
-    "Currency": "Rwanda Franc",
+    "Currency": "Rwandan Franc",
     "Code": "RWF",
     "countryFlag": "🇷🇼"
   },
@@ -899,28 +831,28 @@
   {
     "Country": "Saudi Arabia",
     "CountryCode": "SA",
-    "Currency": "Riyal",
+    "Currency": "Saudi Riyal",
     "Code": "SAR",
     "countryFlag": "🇸🇦"
   },
   {
     "Country": "Seychelles",
     "CountryCode": "SC",
-    "Currency": "Rupee",
+    "Currency": "Seychellois Rupee",
     "Code": "SCR",
     "countryFlag": "🇸🇨"
   },
   {
     "Country": "Sierra Leone",
     "CountryCode": "SL",
-    "Currency": "Leone",
+    "Currency": "Sierra Leonean Leone",
     "Code": "SLL",
     "countryFlag": "🇸🇱"
   },
   {
     "Country": "Singapore",
     "CountryCode": "SG",
-    "Currency": "Dollar",
+    "Currency": "Singapore Dollar",
     "Code": "SGD",
     "countryFlag": "🇸🇬"
   },
@@ -941,28 +873,28 @@
   {
     "Country": "Somalia",
     "CountryCode": "SO",
-    "Currency": "Shilling",
+    "Currency": "Somali Shilling",
     "Code": "SOS",
     "countryFlag": "🇸🇴"
   },
   {
     "Country": "South Africa",
     "CountryCode": "ZA",
-    "Currency": "Rand",
+    "Currency": "South African Rand",
     "Code": "ZAR",
     "countryFlag": "🇿🇦"
   },
   {
-    "Country": "Sri Lanka",
+    "Country": "SriLanka",
     "CountryCode": "LK",
-    "Currency": "Rupee",
+    "Currency": "Srilankan Rupee",
     "Code": "LKR",
     "countryFlag": "🇱🇰"
   },
   {
     "Country": "Sudan",
     "CountryCode": "SD",
-    "Currency": "Dinar",
+    "Currency": "Sudanese Pound",
     "Code": "SDG",
     "countryFlag": "🇸🇩"
   },
@@ -976,14 +908,14 @@
   {
     "Country": "Swaziland",
     "CountryCode": "SZ",
-    "Currency": "Lilangeni",
+    "Currency": "Swazi Lilangeni",
     "Code": "SZL",
     "countryFlag": "🇸🇿"
   },
   {
     "Country": "Sweden",
     "CountryCode": "SE",
-    "Currency": "Krona",
+    "Currency": "Swedish Krona",
     "Code": "SEK",
     "countryFlag": "🇸🇪"
   },
@@ -997,35 +929,35 @@
   {
     "Country": "Taiwan",
     "CountryCode": "TW",
-    "Currency": "Dollar",
+    "Currency": "Taiwan New Dollar",
     "Code": "TWD",
     "countryFlag": "🇹🇼"
   },
   {
     "Country": "Tajikistan",
     "CountryCode": "TJ",
-    "Currency": "Tajikistan Ruble",
+    "Currency": "Tajikistani Ruble",
     "Code": "TJS",
     "countryFlag": "🇹🇯"
   },
   {
     "Country": "Tanzania",
     "CountryCode": "TZ",
-    "Currency": "Shilling",
+    "Currency": "Tanzanian Shilling",
     "Code": "TZS",
     "countryFlag": "🇹🇿"
   },
   {
     "Country": "Thailand",
     "CountryCode": "TH",
-    "Currency": "Baht",
+    "Currency": "Thai Baht",
     "Code": "THB",
     "countryFlag": "🇹🇭"
   },
   {
     "Country": "Tonga",
     "CountryCode": "TO",
-    "Currency": "PaÕanga",
+    "Currency": "Tongan PaÕanga",
     "Code": "TOP",
     "countryFlag": "🇹🇴"
   },
@@ -1046,207 +978,133 @@
   {
     "Country": "Turkey",
     "CountryCode": "TR",
-    "Currency": "Lira",
+    "Currency": "Turkish Lira",
     "Code": "TRY",
     "countryFlag": "🇹🇷"
   },
   {
     "Country": "Turkmenistan",
     "CountryCode": "TM",
-    "Currency": "Manat",
+    "Currency": "Turkmenistani Manat",
     "Code": "TMT",
     "countryFlag": "🇹🇲"
   },
   {
     "Country": "Uganda",
     "CountryCode": "UG",
-    "Currency": "Shilling",
+    "Currency": "Ugandan Shilling",
     "Code": "UGX",
     "countryFlag": "🇺🇬"
   },
   {
     "Country": "Ukraine",
     "CountryCode": "UA",
-    "Currency": "Hryvnia",
+    "Currency": "Ukrainian Hryvnia",
     "Code": "UAH",
     "countryFlag": "🇺🇦"
   },
   {
     "Country": "United Arab Emirates",
     "CountryCode": "AE",
-    "Currency": "Dirham",
+    "Currency": "Emirati Dirham",
     "Code": "AED",
     "countryFlag": "🇦🇪"
   },
   {
     "Country": "Uruguay",
     "CountryCode": "UY",
-    "Currency": "Peso",
+    "Currency": "Uruguayan Peso",
     "Code": "UYU",
     "countryFlag": "🇺🇾"
   },
   {
     "Country": "Uzbekistan",
     "CountryCode": "UZ",
-    "Currency": "Som",
+    "Currency": "Uzbekistani Som",
     "Code": "UZS",
     "countryFlag": "🇺🇿"
   },
   {
     "Country": "Vanuatu",
     "CountryCode": "VU",
-    "Currency": "Vatu",
+    "Currency": "Vanuatu Vatu",
     "Code": "VUV",
     "countryFlag": "🇻🇺"
   },
   {
     "Country": "Venezuela",
     "CountryCode": "VE",
-    "Currency": "Bolivar",
+    "Currency": "Venezuelan Bolivar",
     "Code": "VEF",
     "countryFlag": "🇻🇪"
   },
   {
     "Country": "Vietnam",
     "CountryCode": "VN",
-    "Currency": "Dong",
+    "Currency": "Vietnamese Dong",
     "Code": "VND",
     "countryFlag": "🇻🇳"
   },
   {
     "Country": "Yemen",
     "CountryCode": "YE",
-    "Currency": "Rial",
+    "Currency": "Yemeni Rial",
     "Code": "YER",
     "countryFlag": "🇾🇪"
   },
   {
     "Country": "Zambia",
     "CountryCode": "ZM",
-    "Currency": "Kwacha",
+    "Currency": "Zambian Kwacha",
     "Code": "ZMK",
     "countryFlag": "🇿🇲"
   },
   {
     "Country": "Zimbabwe",
     "CountryCode": "ZW",
-    "Currency": "Zimbabwe Dollar",
+    "Currency": "Zimbabwean Dollar",
     "Code": "ZWD",
     "countryFlag": "🇿🇼"
   },
   {
-    "Country": "Aland Islands",
-    "CountryCode": "AX",
-    "Currency": "Euro",
-    "Code": "EUR",
-    "countryFlag": "🇦🇽"
-  },
-  {
     "Country": "Angola",
     "CountryCode": "AO",
-    "Currency": "Angolan kwanza",
+    "Currency": "Angolan Kwanza",
     "Code": "AOA",
     "countryFlag": "🇦🇴"
   },
   {
     "Country": "Antarctica",
     "CountryCode": "AQ",
-    "Currency": "Antarctican dollar",
+    "Currency": "Antarctican Dollar",
     "Code": "AQD",
     "countryFlag": "🇦🇶"
   },
   {
     "Country": "Bosnia and Herzegovina",
     "CountryCode": "BA",
-    "Currency": "Bosnia and Herzegovina convertible mark",
+    "Currency": "Bosnia Convertible Mark",
     "Code": "BAM",
     "countryFlag": "🇧🇦"
   },
   {
-    "Country": "Congo (Kinshasa)",
-    "CountryCode": "CD",
-    "Currency": "Congolese Frank",
-    "Code": "CDF"
-  },
-  {
     "Country": "Ghana",
     "CountryCode": "GH",
-    "Currency": "Ghana cedi",
+    "Currency": "Ghana Cedi",
     "Code": "GHS",
     "countryFlag": "🇬🇭"
   },
   {
     "Country": "Guernsey",
     "CountryCode": "GG",
-    "Currency": "Guernsey pound",
+    "Currency": "Guernsey Pound",
     "Code": "GGP",
     "countryFlag": "🇬🇬"
   },
   {
-    "Country": "Isle of Man",
-    "CountryCode": "IM",
-    "Currency": "Manx pound",
-    "Code": "GBP",
-    "countryFlag": "🇮🇲"
-  },
-  {
-    "Country": "Laos",
-    "CountryCode": "LA",
-    "Currency": "Lao kip",
-    "Code": "LAK"
-  },
-  {
-    "Country": "Macao S.A.R.",
-    "CountryCode": "MO",
-    "Currency": "Macanese pataca",
-    "Code": "MOP"
-  },
-  {
-    "Country": "Montenegro",
-    "CountryCode": "ME",
-    "Currency": "Euro",
-    "Code": "EUR",
-    "countryFlag": "🇲🇪"
-  },
-  {
-    "Country": "Palestinian Territory",
-    "CountryCode": "PS",
-    "Currency": "Jordanian dinar",
-    "Code": "JOD",
-    "countryFlag": "🇵🇸"
-  },
-  {
-    "Country": "Saint Barthelemy",
-    "CountryCode": "BL",
-    "Currency": "Euro",
-    "Code": "EUR",
-    "countryFlag": "🇧🇱"
-  },
-  {
-    "Country": "Saint Helena",
-    "CountryCode": "SH",
-    "Currency": "Saint Helena pound",
-    "Code": "GBP",
-    "countryFlag": "🇸🇭"
-  },
-  {
-    "Country": "Saint Martin (French part)",
-    "CountryCode": "MF",
-    "Currency": "Netherlands Antillean guilder",
-    "Code": "ANG",
-    "countryFlag": "🇲🇫"
-  },
-  {
-    "Country": "Saint Pierre and Miquelon",
-    "CountryCode": "PM",
-    "Currency": "Euro",
-    "Code": "EUR",
-    "countryFlag": "🇵🇲"
-  },
-  {
     "Country": "Serbia",
     "CountryCode": "RS",
-    "Currency": "Serbian dinar",
+    "Currency": "Serbian Dinar",
     "Code": "RSD",
     "countryFlag": "🇷🇸"
   }

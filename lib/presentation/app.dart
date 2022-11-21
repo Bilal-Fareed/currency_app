@@ -1,6 +1,6 @@
 import 'package:currency_app/logger.dart';
 import 'package:currency_app/presentation/screens/home_screen.dart';
-import 'package:currency_app/provider/country_provider.dart';
+import 'package:currency_app/provider/currency_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -12,12 +12,16 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  late CountryProvider _countryProvider;
+  late CurrencyProvider _countryProvider;
 
   @override
   void initState() {
-    _countryProvider = Provider.of<CountryProvider>(context, listen: false);
-    _countryProvider.setCountries().then((value) => logger.i('countries data sett'));
+    _countryProvider = Provider.of<CurrencyProvider>(context, listen: false);
+    // _countryProvider.loadCurrencies().then((value) async => await _countryProvider.getCurrencyRates());
+    _countryProvider.loadCurrencies().then((value) {
+      //await _countryProvider.getCurrencyRates();
+      logger.i('countries data sett');
+    });
 
     super.initState();
   }
@@ -33,7 +37,39 @@ class _MyAppState extends State<MyApp> {
           foregroundColor: Colors.black,
         ),
       ),
-      home: const HomePage(),
+      home: Consumer<CurrencyProvider>(
+        builder: (context, provider, _) {
+          return provider.isLoading
+              ? SafeArea(
+                  child: Scaffold(
+                    appBar: AppBar(
+                      automaticallyImplyLeading: false,
+                      title: const Center(
+                        child: Text('Convert'),
+                      ),
+                    ),
+                    body: const Center(
+                      child: CircularProgressIndicator(),
+                    ),
+                  ),
+                )
+              : provider.hasError
+                  ? SafeArea(
+                      child: Scaffold(
+                        appBar: AppBar(
+                          automaticallyImplyLeading: false,
+                          title: const Center(
+                            child: Text('Convert'),
+                          ),
+                        ),
+                        body: Center(
+                          child: Text(provider.errorMessage),
+                        ),
+                      ),
+                    )
+                  : const HomePage();
+        },
+      ),
     );
   }
 }
