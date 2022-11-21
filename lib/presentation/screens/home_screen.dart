@@ -1,4 +1,3 @@
-import 'package:currency_app/logger.dart';
 import 'package:currency_app/models/currency.dart';
 import 'package:currency_app/presentation/widgets/add_currency_button.dart';
 import 'package:currency_app/provider/currency_provider.dart';
@@ -57,7 +56,9 @@ class _HomePageState extends State<HomePage> {
                               },
                               child: GestureDetector(
                                 onTap: () async {
-                                  await provider.changeBaseCurrency(provider.addedCurrencyList[index]);
+                                  if (!(provider.baseCurrency == provider.addedCurrencyList[index])) {
+                                    await provider.changeBaseCurrency(provider.addedCurrencyList[index]);
+                                  }
                                 },
                                 child: Padding(
                                   padding: const EdgeInsets.all(7.0),

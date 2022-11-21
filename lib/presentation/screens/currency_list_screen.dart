@@ -29,9 +29,10 @@ class _CurrencyListState extends State<CurrencyList> {
             onPressed: () {
               Navigator.pop(context);
             },
-            child: const Icon(
+            child: Icon(
               CupertinoIcons.clear,
               size: 20.0,
+              color: Colors.grey[600],
             ),
           ),
         ),
@@ -45,7 +46,12 @@ class _CurrencyListState extends State<CurrencyList> {
               onPressed: () {
                 Navigator.pop(context);
               },
-              child: const Text('Done'),
+              child: Text(
+                'Done',
+                style: TextStyle(
+                  color: Colors.grey[600],
+                ),
+              ),
             ),
           ),
         ],
@@ -104,7 +110,7 @@ class _CurrencyListState extends State<CurrencyList> {
                                   trailing: provider.contains(countryToCheck: provider.currencies[index])
                                       ? const Icon(
                                           Icons.done,
-                                          color: Color.fromARGB(255, 12, 64, 108),
+                                          color: Color.fromARGB(255, 5, 96, 176),
                                         )
                                       : const SizedBox(),
                                 ),

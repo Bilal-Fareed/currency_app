@@ -108,6 +108,7 @@ class CurrencyProvider with ChangeNotifier {
 
   void removeFromList(Currency currency) {
     _addedCurrencyList.remove(currency);
+    if (currency == _baseCurrency) changeBaseCurrency(_addedCurrencyList.first);
     notifyListeners();
   }
 
