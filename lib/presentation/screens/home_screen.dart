@@ -77,14 +77,14 @@ class _HomePageState extends State<HomePage> {
                                       leading: Text(
                                         '${provider.addedCurrencyList[index].countryEmoji}',
                                         style: const TextStyle(
-                                          fontSize: 24.0,
+                                          fontSize: 22.0,
                                         ),
                                       ),
                                       title: Text(
                                         provider.addedCurrencyList[index].currencyCode.toString(),
                                         style: const TextStyle(
                                           color: Colors.black,
-                                          fontSize: 20.0,
+                                          fontSize: 18.0,
                                         ),
                                       ),
                                       trailing: Column(

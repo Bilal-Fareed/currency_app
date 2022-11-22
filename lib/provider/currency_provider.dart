@@ -72,8 +72,7 @@ class CurrencyProvider with ChangeNotifier {
     String result = '';
     rates?.forEach((key, value) {
       if (key == currency.currencyCode) {
-        logger.d('matched key : $key ');
-        result = value.toString().substring(0);
+        result = value.toString();
       }
     });
     return result;
@@ -84,7 +83,6 @@ class CurrencyProvider with ChangeNotifier {
     currencyRepository = CurrencyRepository();
     try {
       final result = await currencyRepository.getCurrencyRate(baseCurrency: _baseCurrency);
-      logger.i(result);
       _baseCurrency?.rates = result;
     } on CurrencyException catch (error) {
       logger.e('Currency Exception: $error');
@@ -97,6 +95,7 @@ class CurrencyProvider with ChangeNotifier {
       _hasError = true;
       _errorMessage = AppMessageService.genericErrorMessage;
     }
+
     _isLoading = false;
     notifyListeners();
   }

@@ -17,7 +17,6 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     _countryProvider = Provider.of<CurrencyProvider>(context, listen: false);
-    // _countryProvider.loadCurrencies().then((value) async => await _countryProvider.getCurrencyRates());
     _countryProvider.loadCurrencies().then((value) {
       //await _countryProvider.getCurrencyRates();
       logger.i('countries data sett');
