@@ -1,6 +1,6 @@
 class Currency {
   String? countryEmoji;
-  String? currencyCode;
+  String currencyCode;
   String? currencyName;
   Map<String, dynamic>? rates;
 

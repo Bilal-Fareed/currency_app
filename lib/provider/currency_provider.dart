@@ -6,15 +6,24 @@ import 'package:currency_app/data/repositories/currency_repository.dart';
 import 'package:currency_app/services/app_message_service.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../models/currency.dart';
 
 class CurrencyProvider with ChangeNotifier {
+  final CurrencyRepository _currencyRepository;
+  late SharedPreferences _prefs;
+  late List<String> userCurrencies;
+
+  CurrencyProvider({
+    required CurrencyRepository currencyRepository,
+    required SharedPreferences prefs,
+  })  : _currencyRepository = currencyRepository,
+        _prefs = prefs;
+
   late bool _isLoading = false;
   late bool _hasError = false;
 
   late String _errorMessage;
-
-  late CurrencyRepository currencyRepository;
 
   final List<Currency> _currencies = [];
 
@@ -45,11 +54,24 @@ class CurrencyProvider with ChangeNotifier {
 
       _currencies.add(countryObj);
 
-      if (countryObj.currencyCode == 'USD' || countryObj.currencyCode == 'EUR') {
-        _addedCurrencyList.add(countryObj);
+      final result = _prefs.getStringList('user_currencies');
 
-        if (countryObj.currencyCode == 'USD') {
-          _baseCurrency = countryObj;
+      if (result != null) {
+        userCurrencies = result;
+
+        if (userCurrencies.contains(countryObj.currencyCode)) {
+          _addedCurrencyList.add(countryObj);
+          if (countryObj.currencyCode == 'USD') {
+            _baseCurrency = countryObj;
+          }
+        }
+      } else {
+        if (countryObj.currencyCode == 'USD' || countryObj.currencyCode == 'EUR') {
+          _addedCurrencyList.add(countryObj);
+
+          if (countryObj.currencyCode == 'USD') {
+            _baseCurrency = countryObj;
+          }
         }
       }
     }
@@ -80,9 +102,9 @@ class CurrencyProvider with ChangeNotifier {
 
   Future<void> getCurrencyRates() async {
     _isLoading = true;
-    currencyRepository = CurrencyRepository();
+    // _currencyRepository = CurrencyRepository();
     try {
-      final result = await currencyRepository.getCurrencyRate(baseCurrency: _baseCurrency);
+      final result = await _currencyRepository.getCurrencyRate(baseCurrency: _baseCurrency);
       _baseCurrency?.rates = result;
     } on CurrencyException catch (error) {
       logger.e('Currency Exception: $error');
@@ -100,14 +122,19 @@ class CurrencyProvider with ChangeNotifier {
     notifyListeners();
   }
 
-  void addToList(Currency currency) {
+  Future<void> addToList(Currency currency) async {
     _addedCurrencyList.add(currency);
+    userCurrencies.add(currency.currencyCode);
+    await _prefs.setStringList('user_currencies', userCurrencies);
+
     notifyListeners();
   }
 
-  void removeFromList(Currency currency) {
+  Future<void> removeFromList(Currency currency) async {
     _addedCurrencyList.remove(currency);
     if (currency == _baseCurrency) changeBaseCurrency(_addedCurrencyList.first);
+    userCurrencies.remove(currency.currencyCode);
+    await _prefs.setStringList('user_currencies', userCurrencies);
     notifyListeners();
   }
 

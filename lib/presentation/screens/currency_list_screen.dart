@@ -75,10 +75,10 @@ class _CurrencyListState extends State<CurrencyList> {
                               return InkWell(
                                 hoverColor: Colors.grey[300],
                                 splashColor: Colors.blue,
-                                onTap: () => {
+                                onTap: () async => {
                                   if (!provider.contains(countryToCheck: provider.currencies[index]))
                                     {
-                                      provider.addToList(provider.currencies[index]),
+                                      await provider.addToList(provider.currencies[index]),
                                     }
                                   else
                                     {
@@ -88,7 +88,7 @@ class _CurrencyListState extends State<CurrencyList> {
                                         }
                                       else
                                         {
-                                          provider.removeFromList(provider.currencies[index]),
+                                          await provider.removeFromList(provider.currencies[index]),
                                         }
                                     },
                                 },

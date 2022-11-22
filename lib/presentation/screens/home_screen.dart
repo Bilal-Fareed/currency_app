@@ -49,9 +49,9 @@ class _HomePageState extends State<HomePage> {
                                 ),
                               ),
                               key: ValueKey<Currency>(provider.addedCurrencyList[index]),
-                              onDismissed: (DismissDirection direction) {
+                              onDismissed: (DismissDirection direction) async {
                                 if (direction == DismissDirection.endToStart) {
-                                  provider.removeFromList(provider.addedCurrencyList[index]);
+                                  await provider.removeFromList(provider.addedCurrencyList[index]);
                                 }
                               },
                               child: GestureDetector(
