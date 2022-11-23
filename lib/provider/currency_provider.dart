@@ -12,7 +12,7 @@ import '../models/currency.dart';
 class CurrencyProvider with ChangeNotifier {
   final CurrencyRepository _currencyRepository;
   late SharedPreferences _prefs;
-  late List<String> userCurrencies;
+  List<String> userCurrencies = [];
 
   CurrencyProvider({
     required CurrencyRepository currencyRepository,
@@ -21,6 +21,9 @@ class CurrencyProvider with ChangeNotifier {
         _prefs = prefs;
 
   late bool _isLoading = false;
+
+  int _enteredAmount = 1;
+
   late bool _hasError = false;
 
   late String _errorMessage;
@@ -43,6 +46,17 @@ class CurrencyProvider with ChangeNotifier {
 
   Currency? get baseCurrency => _baseCurrency;
 
+  int get enteredAmount => _enteredAmount;
+
+  set setEnteredAmount(int amount) => _enteredAmount = amount;
+
+  bool isBaseCurrency(Currency currency) {
+    if (_baseCurrency!.currencyCode == currency.currencyCode) {
+      return true;
+    }
+    return false;
+  }
+
   Future<void> loadCurrencies() async {
     _isLoading = true;
     final String response = await rootBundle.loadString('assets/final-new.json');
@@ -61,20 +75,19 @@ class CurrencyProvider with ChangeNotifier {
 
         if (userCurrencies.contains(countryObj.currencyCode)) {
           _addedCurrencyList.add(countryObj);
-          if (countryObj.currencyCode == 'USD') {
-            _baseCurrency = countryObj;
-          }
         }
       } else {
         if (countryObj.currencyCode == 'USD' || countryObj.currencyCode == 'EUR') {
           _addedCurrencyList.add(countryObj);
 
+          userCurrencies.add(countryObj.currencyCode);
           if (countryObj.currencyCode == 'USD') {
             _baseCurrency = countryObj;
           }
         }
       }
     }
+    _baseCurrency = _addedCurrencyList.first;
     await getCurrencyRates();
     _isLoading = false;
     notifyListeners();
@@ -89,7 +102,7 @@ class CurrencyProvider with ChangeNotifier {
     return false;
   }
 
-  String check(Currency currency) {
+  String getSingleRate(Currency currency) {
     final rates = _baseCurrency?.rates;
     String result = '';
     rates?.forEach((key, value) {
@@ -97,12 +110,11 @@ class CurrencyProvider with ChangeNotifier {
         result = value.toString();
       }
     });
-    return result;
+    return result * _enteredAmount;
   }
 
   Future<void> getCurrencyRates() async {
     _isLoading = true;
-    // _currencyRepository = CurrencyRepository();
     try {
       final result = await _currencyRepository.getCurrencyRate(baseCurrency: _baseCurrency);
       _baseCurrency?.rates = result;

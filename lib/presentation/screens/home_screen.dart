@@ -1,4 +1,5 @@
 import 'package:currency_app/models/currency.dart';
+import 'package:currency_app/presentation/screens/currency_convertor_screen.dart';
 import 'package:currency_app/presentation/widgets/add_currency_button.dart';
 import 'package:currency_app/provider/currency_provider.dart';
 import 'package:flutter/material.dart';
@@ -55,47 +56,63 @@ class _HomePageState extends State<HomePage> {
                                 }
                               },
                               child: GestureDetector(
+                                onLongPress: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => const CurrencyConvertorScreen(),
+                                    ),
+                                  );
+                                },
                                 onTap: () async {
                                   if (!(provider.baseCurrency == provider.addedCurrencyList[index])) {
                                     await provider.changeBaseCurrency(provider.addedCurrencyList[index]);
+                                   
                                   }
                                 },
                                 child: Padding(
-                                  padding: const EdgeInsets.all(7.0),
+                                  padding: const EdgeInsets.all(6.0),
                                   child: Container(
                                     decoration: BoxDecoration(
                                       borderRadius: const BorderRadius.all(
                                         Radius.circular(10),
                                       ),
                                       color: Colors.white,
-                                      border: Border.all(
-                                        color: Colors.grey,
-                                      ),
+                                      border: !provider.isBaseCurrency(provider.addedCurrencyList[index])
+                                          ? Border.all(
+                                              color: Colors.grey,
+                                            )
+                                          : Border.all(
+                                              color: const Color.fromARGB(255, 18, 97, 162),
+                                              width: 3.0,
+                                            ),
                                     ),
                                     child: ListTile(
                                       contentPadding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
                                       leading: Text(
                                         '${provider.addedCurrencyList[index].countryEmoji}',
                                         style: const TextStyle(
-                                          fontSize: 22.0,
+                                          fontSize: 18.0,
                                         ),
                                       ),
                                       title: Text(
                                         provider.addedCurrencyList[index].currencyCode.toString(),
                                         style: const TextStyle(
                                           color: Colors.black,
-                                          fontSize: 18.0,
+                                          fontSize: 16.0,
                                         ),
                                       ),
                                       trailing: Column(
                                         mainAxisAlignment: MainAxisAlignment.center,
                                         children: [
-                                          Text(
-                                            '1 ${provider.baseCurrency?.currencyCode} = ${provider.check(provider.addedCurrencyList[index])} ${provider.addedCurrencyList[index].currencyCode}',
-                                            style: const TextStyle(
-                                              fontSize: 16.0,
-                                            ),
-                                          ),
+                                          !provider.isBaseCurrency(provider.addedCurrencyList[index])
+                                              ? Text(
+                                                  '${provider.enteredAmount} ${provider.baseCurrency?.currencyCode} = ${provider.getSingleRate(provider.addedCurrencyList[index])} ${provider.addedCurrencyList[index].currencyCode}',
+                                                  style: const TextStyle(
+                                                    fontSize: 16.0,
+                                                  ),
+                                                )
+                                              : const SizedBox()
                                         ],
                                       ),
                                     ),

@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../provider/currency_provider.dart';
 
-// ignore: camel_case_types
 class CurrencyList extends StatefulWidget {
   const CurrencyList({super.key});
 
@@ -11,7 +10,6 @@ class CurrencyList extends StatefulWidget {
   State<CurrencyList> createState() => _CurrencyListState();
 }
 
-// ignore: camel_case_types
 class _CurrencyListState extends State<CurrencyList> {
   final _snackBar = const SnackBar(
     content: Text('You must have a minimum of two countries'),
@@ -99,7 +97,7 @@ class _CurrencyListState extends State<CurrencyList> {
                                     child: Text(
                                       '${provider.currencies[index].countryEmoji}',
                                       style: const TextStyle(
-                                        fontSize: 24.0,
+                                        fontSize: 20.0,
                                       ),
                                     ),
                                   ),
