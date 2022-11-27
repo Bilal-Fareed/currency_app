@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../../provider/currency_provider.dart';
+import '../../../provider/currency_provider.dart';
 
 class CurrencyList extends StatefulWidget {
   const CurrencyList({super.key});
@@ -74,7 +74,7 @@ class _CurrencyListState extends State<CurrencyList> {
                                 hoverColor: Colors.grey[300],
                                 splashColor: Colors.blue,
                                 onTap: () async => {
-                                  if (!provider.contains(countryToCheck: provider.currencies[index]))
+                                  if (!provider.contains(currencyToCheck: provider.currencies[index]))
                                     {
                                       await provider.addToList(provider.currencies[index]),
                                     }
@@ -105,7 +105,7 @@ class _CurrencyListState extends State<CurrencyList> {
                                     '${provider.currencies[index].currencyCode.toString()} - ${provider.currencies[index].currencyName.toString()}',
                                     style: const TextStyle(color: Colors.black),
                                   ),
-                                  trailing: provider.contains(countryToCheck: provider.currencies[index])
+                                  trailing: provider.contains(currencyToCheck: provider.currencies[index])
                                       ? const Icon(
                                           Icons.done,
                                           color: Color.fromARGB(255, 5, 96, 176),

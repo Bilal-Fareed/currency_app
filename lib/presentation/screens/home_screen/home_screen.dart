@@ -1,18 +1,21 @@
 import 'package:currency_app/models/currency.dart';
-import 'package:currency_app/presentation/screens/currency_convertor_screen.dart';
 import 'package:currency_app/presentation/widgets/add_currency_button.dart';
 import 'package:currency_app/provider/currency_provider.dart';
+import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomeScreenState extends State<HomeScreen> {
+  final _snackBar = const SnackBar(
+    content: Text('Enter value in correct format'),
+  );
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -39,7 +42,11 @@ class _HomePageState extends State<HomePage> {
                         itemCount: provider.addedCurrencyList.length + 1,
                         itemBuilder: (context, index) {
                           if (index == provider.addedCurrencyList.length) {
-                            return const AddCurrencyButton();
+                            return Column(
+                              children: const [
+                                AddCurrencyButton(),
+                              ],
+                            );
                           } else {
                             return Dismissible(
                               direction: provider.addedCurrencyList.length <= 2 ? DismissDirection.none : DismissDirection.endToStart,
@@ -56,18 +63,9 @@ class _HomePageState extends State<HomePage> {
                                 }
                               },
                               child: GestureDetector(
-                                onLongPress: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) => const CurrencyConvertorScreen(),
-                                    ),
-                                  );
-                                },
                                 onTap: () async {
                                   if (!(provider.baseCurrency == provider.addedCurrencyList[index])) {
                                     await provider.changeBaseCurrency(provider.addedCurrencyList[index]);
-                                   
                                   }
                                 },
                                 child: Padding(
@@ -88,7 +86,7 @@ class _HomePageState extends State<HomePage> {
                                             ),
                                     ),
                                     child: ListTile(
-                                      contentPadding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
+                                      contentPadding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 24.0),
                                       leading: Text(
                                         '${provider.addedCurrencyList[index].countryEmoji}',
                                         style: const TextStyle(
@@ -102,19 +100,49 @@ class _HomePageState extends State<HomePage> {
                                           fontSize: 16.0,
                                         ),
                                       ),
-                                      trailing: Column(
-                                        mainAxisAlignment: MainAxisAlignment.center,
-                                        children: [
-                                          !provider.isBaseCurrency(provider.addedCurrencyList[index])
-                                              ? Text(
-                                                  '${provider.enteredAmount} ${provider.baseCurrency?.currencyCode} = ${provider.getSingleRate(provider.addedCurrencyList[index])} ${provider.addedCurrencyList[index].currencyCode}',
+                                      trailing: !provider.isBaseCurrency(provider.addedCurrencyList[index])
+                                          ? Column(
+                                              mainAxisAlignment: MainAxisAlignment.center,
+                                              crossAxisAlignment: CrossAxisAlignment.end,
+                                              children: [
+                                                Text(
+                                                  provider.getRateAgainstAmount(provider.addedCurrencyList[index]),
+                                                ),
+                                                const SizedBox(
+                                                  height: 4.0,
+                                                ),
+                                                Text(
+                                                  '1 ${provider.baseCurrency?.currencyCode} = ${provider.getSingleRate(provider.addedCurrencyList[index])} ${provider.addedCurrencyList[index].currencyCode}',
                                                   style: const TextStyle(
-                                                    fontSize: 16.0,
+                                                    fontSize: 12.0,
                                                   ),
-                                                )
-                                              : const SizedBox()
-                                        ],
-                                      ),
+                                                ),
+                                              ],
+                                            )
+                                          : Column(
+                                              mainAxisAlignment: MainAxisAlignment.center,
+                                              crossAxisAlignment: CrossAxisAlignment.end,
+                                              children: [
+                                                SizedBox(
+                                                  width: 60.0,
+                                                  child: TextField(
+                                                    onSubmitted: (value) {
+                                                      if (value.contains(',') || value.contains('-') || value.contains(' ')) {
+                                                        ScaffoldMessenger.of(context).showSnackBar(_snackBar);
+                                                      } else {
+                                                        provider.setBaseCurrencyAmount(value);
+                                                      }
+                                                    },
+                                                    cursorWidth: 1.5,
+                                                    cursorColor: Colors.grey,
+                                                    cursorHeight: 20.0,
+                                                    keyboardType: TextInputType.number,
+                                                    textDirection: TextDirection.rtl,
+                                                    decoration: InputDecoration(border: InputBorder.none, hintText: provider.baseCurrencyAmount, hintTextDirection: TextDirection.rtl),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
                                     ),
                                   ),
                                 ),

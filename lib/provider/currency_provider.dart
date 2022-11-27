@@ -11,7 +11,7 @@ import '../models/currency.dart';
 
 class CurrencyProvider with ChangeNotifier {
   final CurrencyRepository _currencyRepository;
-  late SharedPreferences _prefs;
+  late final SharedPreferences _prefs;
   List<String> userCurrencies = [];
 
   CurrencyProvider({
@@ -22,8 +22,6 @@ class CurrencyProvider with ChangeNotifier {
 
   late bool _isLoading = false;
 
-  int _enteredAmount = 1;
-
   late bool _hasError = false;
 
   late String _errorMessage;
@@ -33,6 +31,8 @@ class CurrencyProvider with ChangeNotifier {
   final List<Currency> _addedCurrencyList = [];
 
   late Currency? _baseCurrency;
+
+  String? _baseCurrencyAmount = '1';
 
   List<Currency> get addedCurrencyList => _addedCurrencyList;
 
@@ -46,9 +46,12 @@ class CurrencyProvider with ChangeNotifier {
 
   Currency? get baseCurrency => _baseCurrency;
 
-  int get enteredAmount => _enteredAmount;
+  String? get baseCurrencyAmount => _baseCurrencyAmount;
 
-  set setEnteredAmount(int amount) => _enteredAmount = amount;
+  void setBaseCurrencyAmount(amount) {
+    _baseCurrencyAmount = amount;
+    notifyListeners();
+  }
 
   bool isBaseCurrency(Currency currency) {
     if (_baseCurrency!.currencyCode == currency.currencyCode) {
@@ -58,6 +61,7 @@ class CurrencyProvider with ChangeNotifier {
   }
 
   Future<void> loadCurrencies() async {
+    logger.d('gelo');
     _isLoading = true;
     final String response = await rootBundle.loadString('assets/final-new.json');
 
@@ -93,13 +97,33 @@ class CurrencyProvider with ChangeNotifier {
     notifyListeners();
   }
 
-  bool contains({required Currency countryToCheck}) {
-    for (final country in _addedCurrencyList) {
-      if (country.currencyCode == countryToCheck.currencyCode) {
+  bool contains({required Currency currencyToCheck}) {
+    for (final currency in _addedCurrencyList) {
+      if (currency.currencyCode == currencyToCheck.currencyCode) {
         return true;
       }
     }
     return false;
+  }
+
+  String getRateAgainstAmount(Currency currency) {
+    final rates = _baseCurrency?.rates;
+    String result = '';
+    rates?.forEach((key, value) {
+      if (key == currency.currencyCode) {
+        result = value.toString();
+      }
+    });
+
+    var baseAmount = double.tryParse(_baseCurrencyAmount!);
+    var temp = double.tryParse(result);
+
+    if (baseAmount != null && temp != null) {
+      final value = temp * baseAmount;
+      return value.toStringAsFixed(3);
+    } else {
+      return result;
+    }
   }
 
   String getSingleRate(Currency currency) {
@@ -110,7 +134,7 @@ class CurrencyProvider with ChangeNotifier {
         result = value.toString();
       }
     });
-    return result * _enteredAmount;
+    return result;
   }
 
   Future<void> getCurrencyRates() async {
@@ -135,23 +159,27 @@ class CurrencyProvider with ChangeNotifier {
   }
 
   Future<void> addToList(Currency currency) async {
+    _isLoading = true;
     _addedCurrencyList.add(currency);
     userCurrencies.add(currency.currencyCode);
     await _prefs.setStringList('user_currencies', userCurrencies);
-
+    _isLoading = false;
     notifyListeners();
   }
 
   Future<void> removeFromList(Currency currency) async {
+    _isLoading = true;
     _addedCurrencyList.remove(currency);
     if (currency == _baseCurrency) changeBaseCurrency(_addedCurrencyList.first);
     userCurrencies.remove(currency.currencyCode);
     await _prefs.setStringList('user_currencies', userCurrencies);
+    _isLoading = false;
     notifyListeners();
   }
 
   Future<void> changeBaseCurrency(Currency newBaseCurrency) async {
     _isLoading = true;
+    _baseCurrencyAmount = '1';
     _baseCurrency = newBaseCurrency;
     await getCurrencyRates();
     _isLoading = false;

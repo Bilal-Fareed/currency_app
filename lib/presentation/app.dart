@@ -1,5 +1,5 @@
 import 'package:currency_app/logger.dart';
-import 'package:currency_app/presentation/screens/home_screen.dart';
+import 'package:currency_app/presentation/screens/home_screen/home_screen.dart';
 import 'package:currency_app/provider/currency_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -18,7 +18,6 @@ class _MyAppState extends State<MyApp> {
   void initState() {
     _countryProvider = Provider.of<CurrencyProvider>(context, listen: false);
     _countryProvider.loadCurrencies().then((value) {
-      //await _countryProvider.getCurrencyRates();
       logger.i('countries data sett');
     });
 
@@ -66,7 +65,7 @@ class _MyAppState extends State<MyApp> {
                         ),
                       ),
                     )
-                  : const HomePage();
+                  : const HomeScreen();
         },
       ),
     );

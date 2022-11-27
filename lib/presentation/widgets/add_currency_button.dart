@@ -1,4 +1,4 @@
-import 'package:currency_app/presentation/screens/currency_list_screen.dart';
+import 'package:currency_app/presentation/screens/currency_list_screen/currency_list_screen.dart';
 import 'package:flutter/material.dart';
 
 class AddCurrencyButton extends StatelessWidget {
