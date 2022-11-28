@@ -138,7 +138,11 @@ class _HomeScreenState extends State<HomeScreen> {
                                                     cursorHeight: 20.0,
                                                     keyboardType: TextInputType.number,
                                                     textDirection: TextDirection.rtl,
-                                                    decoration: InputDecoration(border: InputBorder.none, hintText: provider.baseCurrencyAmount, hintTextDirection: TextDirection.rtl),
+                                                    decoration: InputDecoration(
+                                                      border: InputBorder.none,
+                                                      hintText: provider.baseCurrencyAmount,
+                                                      hintTextDirection: TextDirection.rtl,
+                                                    ),
                                                   ),
                                                 ),
                                               ],

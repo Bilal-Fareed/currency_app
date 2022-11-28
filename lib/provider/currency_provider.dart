@@ -61,7 +61,6 @@ class CurrencyProvider with ChangeNotifier {
   }
 
   Future<void> loadCurrencies() async {
-    logger.d('gelo');
     _isLoading = true;
     final String response = await rootBundle.loadString('assets/final-new.json');
 
