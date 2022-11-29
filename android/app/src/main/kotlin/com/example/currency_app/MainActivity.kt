@@ -1,4 +1,4 @@
-package com.example.currency_app
+package freeworld.currency.app
 
 import io.flutter.embedding.android.FlutterActivity
 
