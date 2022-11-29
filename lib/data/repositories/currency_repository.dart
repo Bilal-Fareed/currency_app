@@ -7,7 +7,7 @@ import 'package:http/http.dart' as http;
 class CurrencyRepository {
   Future<Map<String, dynamic>> getCurrencyRate({required Currency? baseCurrency}) async {
     final response = await http.get(
-      Uri.parse('http://192.168.3.137:3500/v1/currencyRate/${baseCurrency!.currencyCode}'),
+      Uri.parse('http://34.93.171.108:3000/v1/currencyRate/${baseCurrency!.currencyCode}'),
     );
     if (response.statusCode != 200) {
       final data = json.decode(response.body);
